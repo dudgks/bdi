@@ -29,25 +29,55 @@
 			</tr>
 			<tr>
 				<th><label for="trans">성별</label></th>
-				<td>
-					<select id="trans">
+				<td><select id="trans">
+						<option value="">선택</option>
 						<option value="1">남</option>
 						<option value="2">여</option>
-					</select>
+				</select>
 			</tr>
 			<tr>
-				<td colspan="2"><button type="button" onclick="alert(1)">회원가입</button></td>
+				<td colspan="2"><button type="button" onclick="checkValue()">회원가입</button></td>
 			</tr>
 		</table>
 	</form>
-<script>
-test(1);
-function test(a){
-	alert("난 테스트 함수1");
-}
-function test(){
-	alert("난 테스트 함수2");
-}
-</script>
+	<script>
+		function checkValue() {
+			var nameObj = document.getElementById("name");
+			if (nameObj.value.trim().length < 2) {
+				alert("이름은 2글자 이상입니다.");
+				nameObj.value = "";
+				nameObj.focus();
+				return false;
+			}
+			var birthObj = document.getElementById("birth");
+			if (birthObj.value.trim().length < 6) {
+				alert("생년월일은 6글자 이상입니다.");
+				birthObj.value = "";
+				birthObj.focus();
+				return false;
+			}
+			var emailObj = document.getElementById("email");
+			if (emailObj.value.trim().length < 6) {
+				alert("이메일은 6글자 이상입니다.");
+				emailObj.value = "";
+				emailObj.focus();
+				return false;
+			}
+			var idObj = document.getElementById("id");
+			if (idObj.value.trim().length < 6) {
+				alert("아이디는 6글자 이상입니다.");
+				idObj.value = "";
+				idObj.focus();
+				return false;
+			}
+			var pwdObj = document.getElementById("pwd");
+			if (pwdObj.value.trim().length < 6) {
+				alert("비밀번호는은 6글자 이상입니다.");
+				pwdObj.value = "";
+				pwdObj.focus();
+				return false;
+			}
+		}
+	</script>
 </body>
 </html>
